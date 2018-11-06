@@ -1,0 +1,28 @@
+vector <int> v[6] ;
+bool vis[6] ;
+int lev[6] ;
+
+void bfs(int s) {
+    queue<int> q ;
+    q.push(s) ; // pushing source into queue
+    vis[s] = true ; // setting root node as visited
+    lev[s] = 0 ; // setting root node level as 0
+
+    // now pop until any node has in the queue
+    while(! q.empty()) {
+        int p = q.front() ; // accessing top most element or queue top
+        printf("%d ", p) ; // printing top most element or queue top
+        q.pop() ; // removing recently printed element from the queue
+        for(int i = 0 ; i < v[p].size() ; i ++ ) {
+            if(vis[v[p][i]] == false) { // this means the node has not visited yet, need to visit
+                lev[v[p][i]] = lev[p] + 1 ; // setting child node level as parenent level + 1
+                q.push(v[p][i]) ; // pushing into the queue for next visit
+                vis[v[p][i]] = true ; // setting the node as visited
+            }
+        }
+    }
+
+}
+int main() {
+  
+}
