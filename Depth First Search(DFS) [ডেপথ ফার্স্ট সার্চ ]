@@ -18,7 +18,7 @@ void bfs(int s) {
         stk.pop() ; // removing recently printed element from the stack
         for(int i = 0 ; i < v[p].size() ; i ++ ) {
             if(vis[v[p][i]] == false) { // this means the node has not visited yet, need to visit
-                lev[v[p][i]] = lev[p] + 1 ; // setting child node level as parenent level + 1
+                lev[v[p][i]] = lev[p] + 1 ; // setting child node level as parent level + 1
                 stk.push(v[p][i]) ; // pushing into the stack for next visit
                 vis[v[p][i]] = true ; // setting the node as visited
             }
